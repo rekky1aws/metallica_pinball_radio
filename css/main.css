@@ -107,6 +107,17 @@ div {
      width: 5vw;
      background-color: black;
      box-shadow: 0 0 0.25vh 0.25vh rgba(0,0,0,0.5);
+     overflow: hidden;
+     display: flex;
+     align-items: flex-end;
+}
+
+.gauge-content {
+     background-color: lime;
+     opacity: 0.5;
+     width: 100%;
+     height: 0%;
+     transition: 0.2s ease-in-out;
 }
 
 .hidden {

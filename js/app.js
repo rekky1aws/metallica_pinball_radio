@@ -89,6 +89,7 @@ const modalBtn = document.querySelector('#modal-btn');
 const remakeTracksChbx = document.querySelector('#remake-tracks');
 	// Animations
 const leftKnob = document.querySelector('.left-knob');
+const leftGaugeContent = document.querySelector('.left-gauge-content');
 const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
 
@@ -191,6 +192,7 @@ function startApp ()
 	setSelArrPos();
 	displaySongName();
 	rotateLeftKnob();
+	fillLeftGauge();
 
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
@@ -231,6 +233,7 @@ function changeTrack ()
 	setSelArrPos();
 	displaySongName();
 	rotateLeftKnob();
+	fillLeftGauge();
 }
 
 function pauseTrack () // NOT FINISHED
@@ -272,6 +275,11 @@ function rotateLeftKnob ()
 {
 	leftKnob.style.boxShadow = `0 0 0.25vh 0.25vh rgba(0,0,0,0.5), inset -0.25vh -0.25vh 0.25vh 0.25vh rgba(0,0,0,0.5), inset 0.25vh 0.25vh 0.25vh 0.25vh rgba(255,255,255,0.5);`;
 	leftKnob.style.transform = `rotate(${(trackPos[trackId] / 100 * 300) - 160}deg)`;
+}
+
+function fillLeftGauge ()
+{
+	leftGaugeContent.style.height = `${tracks[trackId].gaugePercent}%`;
 }
 
 function playRadioSweep ()
