@@ -3,8 +3,6 @@
  	+ Find a way to hide errors caused by YouTube
 
  + Animation :
- 	+ Fill left gauge with random values for every music.
- 		+ Use MusicTrack.gaugePercent.
  	+ Fill right gauge with the volume value.
  	+ Right Knob rotating according to the volume.
 
