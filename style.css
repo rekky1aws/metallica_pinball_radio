@@ -1,0 +1,41 @@
+main {
+	display: flex;
+	height: ;
+}
+
+/* div {
+	min-width: 50px;
+	min-height: 50px;
+} */
+
+* {
+	border: 1px dashed red;
+}
+
+.center {
+	width: 20vw;
+}
+
+.knob-container {
+	display: grid;
+}
+
+.knob-container:first-child {
+	grid-template-columns: 2fr 1fr;
+}
+
+.knob-container:last-child {
+	grid-template-columns: 1fr 2fr;
+}
+
+.knob {
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	margin: 5px;
+}
+
+.center {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 9fr;
+}
