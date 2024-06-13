@@ -3,6 +3,11 @@
  	- Knob indicator
  	- Selector steps
  	- Selector Indicator
- - Use youtube embed to start music
- - Insert radio noise
+ - Music Class
+ - Add all the tracks with the music class
  - Random positon for each track, but always in the same order.
+ - Choose random track to start
+ - Play the correct video
+ - Use arrow keys to change sound
+ 	- Add buttons on mobile
+ - Insert radio noise
