@@ -1,11 +1,19 @@
-function loadEmbededYtVideo (videoCode)
+// CLASS
+
+// CONSTS
+const header = document.querySelector('header');
+const mainElt = document.querySelector('main');
+const footer = document.querySelector('footer');
+const modalBtn = document.querySelector('#modal-btn');
+
+// VARS
+
+// FUNCS
+function loadEmbededYtVideo (videoCode = "")
 {
-	const footer = document.querySelector('footer');
 	const ytPlayer = document.createElement('iframe');
 
-	console.log()
-
-	ytPlayer.setAttribute("src", "https://www.youtube.com/embed/FLTchCiC0T0?si=ok7qhPOaF_kUtMXU&autoplay=1&enablejsapi=1&rel=0&mute=1");
+	ytPlayer.setAttribute("src", `https://www.youtube.com/embed/${videoCode}?si=ok7qhPOaF_kUtMXU&autoplay=1&enablejsapi=1&rel=0`);
 	ytPlayer.setAttribute("frameborder", "0");
 	ytPlayer.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
 	ytPlayer.setAttribute("allowfullscreen", "");
@@ -14,10 +22,19 @@ function loadEmbededYtVideo (videoCode)
 	footer.appendChild(ytPlayer);
 }
 
-
-if (confirm('Autoriser le site a jouer de la musique')) {
-
-	
-
-
+function startApp () 
+{
+	header.classList.toggle('hidden');
+	mainElt.classList.toggle('hidden');
+	footer.classList.toggle('hidden');
 }
+
+// EVENTLISTENERS
+modalBtn.addEventListener('click', (e) => {
+	startApp();
+	loadEmbededYtVideo('FLTchCiC0T0');
+	loadEmbededYtVideo('X8OeBZQn3_w');
+	e.target.parentNode.remove();
+});
+
+// MAIN
