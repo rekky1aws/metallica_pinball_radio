@@ -33,6 +33,10 @@ div {
 }
 */
 
+.hidden {
+	display: none;
+}
+
 .center {
      width: 100%;
      margin: 0.5vh;
@@ -93,5 +97,5 @@ div {
 }
 
 .yt-player {
-	
+
 }
