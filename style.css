@@ -22,14 +22,16 @@ footer {
      align-items: center;
 }
 
-/* div {
+/*
+div {
      min-width: 50px;
      min-height: 50px;
 }
- * {
+
+* {
      border: 1px dashed red;
 }
- */
+*/
 
 .center {
      width: 100%;
@@ -88,4 +90,8 @@ footer {
 
 .selector-arrow {
      background-color: red;
+}
+
+.yt-player {
+	
 }
