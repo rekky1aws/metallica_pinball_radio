@@ -1,19 +1,30 @@
 // CLASS
-class Music {
-	constructor (title="", videoCode="") 
+class MusicTrack {
+	constructor (title="", videoCode="", startTime=0) 
 	{
-		this.title = title;
-		this.videoCode = videoCode;
+		this._title = title;
+		this._videoCode = videoCode;
+		this._startTime = startTime;
 	}
 
 	get title ()
 	{
-		return this.title;
+		return this._title;
 	}
 
 	get videoCode ()
 	{
-		return this.videoCode;
+		return this._videoCode;
+	}
+
+	get startTime ()
+	{
+		return this._startTime;
+	}
+
+	get embedLink ()
+	{
+		return `https://www.youtube.com/embed/${this.videoCode}?t=${this.startTime}&autoplay=1&enablejsapi=1&rel=0`;
 	}
 }
 
@@ -23,20 +34,36 @@ const mainElt = document.querySelector('main');
 const footer = document.querySelector('footer');
 const modalBtn = document.querySelector('#modal-btn');
 
+const tracks = [
+	new MusicTrack("Seek and Destroy", "FLTchCiC0T0"),
+	new MusicTrack("Ride the Lightning", "DVOImtJY7po"),
+	new MusicTrack("For Whom the Bell Tolls", "B_HSa1dEL9s"),
+	new MusicTrack("Fade to Black", "9HZ_tx8aWuA"),
+	new MusicTrack("Battery", "uzlOcupu5UE"),
+	new MusicTrack("Master of Puppets", "u6LahTuw02c"),
+	new MusicTrack("Blackened", "8G4xF_VGhEw", 36),
+	new MusicTrack("One", "apK2jCrfnsk", 18),
+	new MusicTrack("Enter Sandman", "XZuM4zFg"),
+	new MusicTrack("Sad but True", "TpohVYomw2o"),
+	new MusicTrack("The Unforgiven", "domjqjQ_WRI"),
+	new MusicTrack("Fuel", "Ji_QolNU4I8")
+];
+
+
 // VARS
 
 // FUNCS
-function loadEmbededYtVideo (videoCode = "")
+function loadEmbededYtVideo (parentNode, embedLink = "")
 {
 	const ytPlayer = document.createElement('iframe');
 
-	ytPlayer.setAttribute("src", `https://www.youtube.com/embed/${videoCode}?si=ok7qhPOaF_kUtMXU&autoplay=1&enablejsapi=1&rel=0`);
+	ytPlayer.setAttribute("src", embedLink);
 	ytPlayer.setAttribute("frameborder", "0");
 	ytPlayer.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
 	ytPlayer.setAttribute("allowfullscreen", "");
 	ytPlayer.classList.add('yt-player');
 
-	footer.appendChild(ytPlayer);
+	parentNode.appendChild(ytPlayer);
 }
 
 function startApp () 
@@ -49,8 +76,7 @@ function startApp ()
 // EVENTLISTENERS
 modalBtn.addEventListener('click', (e) => {
 	startApp();
-	loadEmbededYtVideo('FLTchCiC0T0');
-	loadEmbededYtVideo('X8OeBZQn3_w');
+	
 	e.target.parentNode.remove();
 });
 
