@@ -1,4 +1,21 @@
 // CLASS
+class Music {
+	constructor (title="", videoCode="") 
+	{
+		this.title = title;
+		this.videoCode = videoCode;
+	}
+
+	get title ()
+	{
+		return this.title;
+	}
+
+	get videoCode ()
+	{
+		return this.videoCode;
+	}
+}
 
 // CONSTS
 const header = document.querySelector('header');
