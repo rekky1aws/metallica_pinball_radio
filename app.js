@@ -24,7 +24,12 @@ class MusicTrack {
 
 	get embedLink ()
 	{
-		return `https://www.youtube.com/embed/${this.videoCode}?t=${this.startTime}&autoplay=1&enablejsapi=1&rel=0`;
+		let link = `https://www.youtube.com/embed/${this.videoCode}?si=2GYxFb57x9jPFMcA&autoplay=1&enablejsapi=1&rel=0`;
+		if (this.startTime > 0) {
+			link = link + `&t=${this.startTime}`;
+		}
+
+		return link;
 	}
 }
 
@@ -43,7 +48,7 @@ const tracks = [
 	new MusicTrack("Master of Puppets", "u6LahTuw02c"),
 	new MusicTrack("Blackened", "8G4xF_VGhEw", 36),
 	new MusicTrack("One", "apK2jCrfnsk", 18),
-	new MusicTrack("Enter Sandman", "XZuM4zFg"),
+	new MusicTrack("Enter Sandman", "XZuM4zFg-60"),
 	new MusicTrack("Sad but True", "TpohVYomw2o"),
 	new MusicTrack("The Unforgiven", "domjqjQ_WRI"),
 	new MusicTrack("Fuel", "Ji_QolNU4I8")
@@ -53,7 +58,7 @@ const tracks = [
 // VARS
 
 // FUNCS
-function loadEmbededYtVideo (parentNode, embedLink = "")
+function loadEmbededYtVideo (parentNode=footer, embedLink = "")
 {
 	const ytPlayer = document.createElement('iframe');
 
@@ -61,9 +66,22 @@ function loadEmbededYtVideo (parentNode, embedLink = "")
 	ytPlayer.setAttribute("frameborder", "0");
 	ytPlayer.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
 	ytPlayer.setAttribute("allowfullscreen", "");
+	ytPlayer.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
 	ytPlayer.classList.add('yt-player');
 
 	parentNode.appendChild(ytPlayer);
+}
+
+function loadAllTracks ()
+{
+	tracks.forEach((elt) => {
+		loadEmbededYtVideo(footer, elt.embedLink);
+	});
+}
+
+function loadTrackFromInd (i=0)
+{
+	loadEmbededYtVideo(footer, tracks[i].embedLink);
 }
 
 function startApp () 
@@ -76,7 +94,7 @@ function startApp ()
 // EVENTLISTENERS
 modalBtn.addEventListener('click', (e) => {
 	startApp();
-	
+
 	e.target.parentNode.remove();
 });
 
