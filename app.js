@@ -57,6 +57,7 @@ const tracks = [
 
 
 // VARS
+let trackId = Math.floor(Math.random() * tracks.length);
 
 // FUNCS
 function loadEmbededYtVideo (parentNode=videoContainer, embedLink = "")
@@ -73,6 +74,11 @@ function loadEmbededYtVideo (parentNode=videoContainer, embedLink = "")
 	parentNode.appendChild(ytPlayer);
 }
 
+function unloadEmbededYtVideo (parentNode=videoContainer)
+{
+	parentNode.innerHTML = "";
+}
+
 function loadAllTracks (parentNode=videoContainer)
 {
 	tracks.forEach((elt) => {
@@ -80,7 +86,7 @@ function loadAllTracks (parentNode=videoContainer)
 	});
 }
 
-function loadTrackFromInd (parentNode=videoContainer, i=0)
+function loadTrackFromInd (i=trackId, parentNode=videoContainer)
 {
 	loadEmbededYtVideo(parentNode, tracks[i].embedLink);
 }
@@ -91,11 +97,42 @@ function startApp ()
 	mainSect.classList.toggle('hidden');
 }
 
+function nextTrack ()
+{
+	if (trackId === tracks.length)
+	{
+		return null;
+	}
+
+	unloadEmbededYtVideo();
+	trackId++;
+	loadTrackFromInd();
+
+	return true;
+}
+
+function prevTrack ()
+{
+	if (trackId === 0)
+	{
+		return null;
+	}
+
+	unloadEmbededYtVideo();
+	trackId--;
+	loadTrackFromInd();
+
+	return true;
+}
+
 // EVENTLISTENERS
-modalBtn.addEventListener('click', (e) => {
+modalBtn.addEventListener('click', (evt) => {
 	startApp();
 
-	e.target.parentNode.remove();
+	console.log(trackId);
+	loadTrackFromInd();
+
+	evt.target.parentNode.remove();
 });
 
 // MAIN
