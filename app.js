@@ -57,6 +57,7 @@ const tracks = [
 
 
 // VARS
+let modalClicked = false;
 let trackId = Math.floor(Math.random() * tracks.length);
 
 // FUNCS
@@ -93,8 +94,15 @@ function loadTrackFromInd (i=trackId, parentNode=videoContainer)
 
 function startApp () 
 {
+	if (modalClicked) {
+		return null;
+	}
+
+	loadTrackFromInd();
+
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
+	modalClicked = true;
 }
 
 function nextTrack ()
@@ -126,16 +134,16 @@ function prevTrack ()
 }
 
 // EVENTLISTENERS
-modalBtn.addEventListener('click', (evt) => {
-	startApp();
-
-	console.log(trackId);
-	loadTrackFromInd();
-
-	evt.target.parentNode.remove();
-});
+modalBtn.addEventListener('click', startApp);
 
 document.addEventListener('keydown', (evt) => {
+	if (!modalClicked) {
+		if (evt.key === "Enter") {
+			startApp();
+		}
+		return null;
+	}
+
 	switch (evt.key) {
 		case "ArrowLeft":
 			prevTrack();
