@@ -35,8 +35,9 @@ class MusicTrack {
 
 // CONSTS
 const header = document.querySelector('header');
-const mainElt = document.querySelector('main');
 const footer = document.querySelector('footer');
+const mainSect = document.querySelector('#main-sect');
+const videoContainer = document.querySelector('#video-container');
 const modalBtn = document.querySelector('#modal-btn');
 
 const tracks = [
@@ -58,7 +59,7 @@ const tracks = [
 // VARS
 
 // FUNCS
-function loadEmbededYtVideo (parentNode=footer, embedLink = "")
+function loadEmbededYtVideo (parentNode=videoContainer, embedLink = "")
 {
 	const ytPlayer = document.createElement('iframe');
 
@@ -72,23 +73,22 @@ function loadEmbededYtVideo (parentNode=footer, embedLink = "")
 	parentNode.appendChild(ytPlayer);
 }
 
-function loadAllTracks ()
+function loadAllTracks (parentNode=videoContainer)
 {
 	tracks.forEach((elt) => {
-		loadEmbededYtVideo(footer, elt.embedLink);
+		loadEmbededYtVideo(parentNode, elt.embedLink);
 	});
 }
 
-function loadTrackFromInd (i=0)
+function loadTrackFromInd (parentNode=videoContainer, i=0)
 {
-	loadEmbededYtVideo(footer, tracks[i].embedLink);
+	loadEmbededYtVideo(parentNode, tracks[i].embedLink);
 }
 
 function startApp () 
 {
-	header.classList.toggle('hidden');
-	mainElt.classList.toggle('hidden');
-	footer.classList.toggle('hidden');
+	modalBtn.parentNode.classList.toggle('hidden');
+	mainSect.classList.toggle('hidden');
 }
 
 // EVENTLISTENERS

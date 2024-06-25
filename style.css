@@ -1,26 +1,31 @@
 body {
-     display: grid;
+     padding: 0;
+     margin: 0;
+     background-color: #1D1D1D;
+}
+
+main {
+     display: flex;
      justify-content: center;
      align-items: center;
      padding: 0;
      margin: 0;
      width: 100vw;
      height: 100vh;
-     background-color: #1D1D1D;
 }
 
-main {
+#main-sect {
      display: flex;
      width: 80vw;
      aspect-ratio: 8 / 1;
      background-color: saddlebrown;
 }
 
-footer {
+#video-container {
      display: none;
 }
 
-/*
+/* DEBUG
 div {
      min-width: 50px;
      min-height: 50px;
@@ -46,7 +51,7 @@ div {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
 .center {
