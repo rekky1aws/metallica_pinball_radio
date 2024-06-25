@@ -135,4 +135,19 @@ modalBtn.addEventListener('click', (evt) => {
 	evt.target.parentNode.remove();
 });
 
+document.addEventListener('keydown', (evt) => {
+	switch (evt.key) {
+		case "ArrowLeft":
+			prevTrack();
+			break;
+			
+		case "ArrowRight":
+			nextTrack();
+			break;
+
+		default:
+			break;
+	}
+});
+
 // MAIN
