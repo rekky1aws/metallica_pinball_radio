@@ -39,6 +39,7 @@ const footer = document.querySelector('footer');
 const mainSect = document.querySelector('#main-sect');
 const videoContainer = document.querySelector('#video-container');
 const modalBtn = document.querySelector('#modal-btn');
+const selArrow = document.querySelector('.selector-arrow');
 
 const tracks = [
 	new MusicTrack("Seek and Destroy", "FLTchCiC0T0"),
@@ -101,6 +102,7 @@ function startApp ()
 
 	loadTrackFromInd();
 	genTrackPos();
+	setSelArrPos();
 
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
@@ -117,6 +119,7 @@ function nextTrack ()
 	unloadEmbededYtVideo();
 	trackId++;
 	loadTrackFromInd();
+	setSelArrPos();
 
 	return true;
 }
@@ -131,6 +134,7 @@ function prevTrack ()
 	unloadEmbededYtVideo();
 	trackId--;
 	loadTrackFromInd();
+	setSelArrPos();
 
 	return true;
 }
@@ -145,6 +149,11 @@ function genTrackPos ()
 	}
 
 	console.log(trackPos);
+}
+
+function setSelArrPos ()
+{
+	selArrow.style.left = `calc(${trackPos[trackId]}% - 0.25vh)`;
 }
 
 // EVENTLISTENERS

@@ -115,7 +115,7 @@ div {
      background-color: red;
      height: 100%;
      width: 0.5vw;
-
+     transition: ease-in-out 0.2s;
 }
 
 #modal-btn {
