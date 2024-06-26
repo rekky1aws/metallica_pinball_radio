@@ -59,6 +59,7 @@ const tracks = [
 // VARS
 let modalClicked = false;
 let trackId = Math.floor(Math.random() * tracks.length);
+let trackPos = [];
 
 // FUNCS
 function loadEmbededYtVideo (parentNode=videoContainer, embedLink = "")
@@ -99,6 +100,7 @@ function startApp ()
 	}
 
 	loadTrackFromInd();
+	genTrackPos();
 
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
@@ -131,6 +133,18 @@ function prevTrack ()
 	loadTrackFromInd();
 
 	return true;
+}
+
+function genTrackPos ()
+{
+	for (let i = 0; i < tracks.length; i++) {
+		let interval = 100 / tracks.length;
+		let offset = i * interval;
+		let pos = Math.floor(offset + (Math.random() * interval));
+		trackPos.push(pos);
+	}
+
+	console.log(trackPos);
 }
 
 // EVENTLISTENERS
