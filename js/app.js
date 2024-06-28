@@ -39,6 +39,7 @@ const footer = document.querySelector('footer');
 const mainSect = document.querySelector('#main-sect');
 const videoContainer = document.querySelector('#video-container');
 const modalBtn = document.querySelector('#modal-btn');
+const sfx = document.querySelector('#sfx');
 const selArrow = document.querySelector('.selector-arrow');
 
 const tracks = [
@@ -61,6 +62,7 @@ const tracks = [
 let modalClicked = false;
 let trackId = Math.floor(Math.random() * tracks.length);
 let trackPos = [];
+let stopSweep;
 
 // FUNCS
 function loadEmbededYtVideo (parentNode=videoContainer, embedLink = "")
@@ -116,6 +118,7 @@ function nextTrack ()
 		return null;
 	}
 
+	shortRadioSweep();
 	unloadEmbededYtVideo();
 	trackId++;
 	loadTrackFromInd();
@@ -131,6 +134,7 @@ function prevTrack ()
 		return null;
 	}
 
+	shortRadioSweep();
 	unloadEmbededYtVideo();
 	trackId--;
 	loadTrackFromInd();
@@ -154,6 +158,22 @@ function genTrackPos ()
 function setSelArrPos ()
 {
 	selArrow.style.left = `calc(${trackPos[trackId]}% - 0.25vh)`;
+}
+
+function playRadioSweep ()
+{
+	sfx.play();
+}
+
+function stopRadioSweep ()
+{
+	sfx.pause();
+}
+
+function shortRadioSweep ()
+{
+	playRadioSweep();
+	stopSweep = setTimeout(stopRadioSweep, 1000);
 }
 
 // EVENTLISTENERS
