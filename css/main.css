@@ -96,16 +96,6 @@ div {
      box-shadow: 0 0 0.25vh 0.25vh rgba(0,0,0,0.5);
 }
 
-.knob::before {
-     top: 1vw;
-     left: 50%;
-     transform: translateX(-50%);
-     width: 10px;
-     height: 10px;
-     background-color: #ffffff;
-     box-shadow: 0px 0px 10px #349beb;
-}
-
 .song-name {
      border-radius: 1vh;
      background-color: black;
