@@ -1,7 +1,6 @@
 # TODO
  - HTML :
  	- Knob indicator.
- 	- Selector steps.
  	- Selector Indicator.
  - Animation :
  	- Loader for the radio with random spin of the knobs.
