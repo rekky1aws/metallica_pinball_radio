@@ -7,6 +7,7 @@
  - Apply position of the correct track on the selector.
  - Add buttons (and/or action) on mobile to change song.
  - Display music name
+ 	+ Correct color (green)
 
  - BONUS : 
  	- Add visuals around the radio.
