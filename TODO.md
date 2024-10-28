@@ -4,6 +4,7 @@
  	+ Selector Indicator.
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
+ 	+ Rotate knobs on music change
  + Apply position of the correct track on the selector.
  + Add buttons (and/or action) on mobile to change song.
  + Display music name
