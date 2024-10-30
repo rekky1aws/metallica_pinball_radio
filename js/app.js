@@ -43,6 +43,7 @@ const sfx = document.querySelector('#sfx');
 const selArrow = document.querySelector('.selector-arrow');
 
 const tracks = [
+	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
 	new MusicTrack("Seek and Destroy", "FLTchCiC0T0"),
 	new MusicTrack("Ride the Lightning", "DVOImtJY7po"),
 	new MusicTrack("For Whom the Bell Tolls", "B_HSa1dEL9s"),
