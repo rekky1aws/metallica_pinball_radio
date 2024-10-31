@@ -66,7 +66,7 @@ let trackPos = [];
 let stopSweep;
 
 // FUNCS
-function loadEmbededYtVideo (parentNode=videoContainer, embedLink = "")
+function loadEmbededYtVideo (parentNode = videoContainer, embedLink = "")
 {
 	const ytPlayer = document.createElement('iframe');
 
