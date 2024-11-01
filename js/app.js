@@ -41,6 +41,7 @@ const videoContainer = document.querySelector('#video-container');
 const modalBtn = document.querySelector('#modal-btn');
 const sfx = document.querySelector('#sfx');
 const selArrow = document.querySelector('.selector-arrow');
+const songNameElt = document.querySelector('.song-name');
 
 const tracks = [
 	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
