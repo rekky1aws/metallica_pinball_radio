@@ -26,7 +26,7 @@ class MusicTrack {
 	{
 		let link = `https://www.youtube.com/embed/${this.videoCode}?si=2GYxFb57x9jPFMcA&autoplay=1&enablejsapi=1&rel=0`;
 		if (this.startTime > 0) {
-			link = link + `&t=${this.startTime}`;
+			link = link + `&start=${this.startTime}`;
 		}
 
 		return link;
