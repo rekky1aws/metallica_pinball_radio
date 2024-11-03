@@ -14,3 +14,4 @@
 
  + BONUS : 
  	+ Add visuals around the radio.
+ 	+ Add two modes to load only old music or load musics from the remde 2024 version
