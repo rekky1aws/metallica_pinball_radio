@@ -1,4 +1,6 @@
 # TODO
+ + Music :
+ 	+ Add new tracks from the 2024 remake
  + HTML :
  	+ Knob indicator.
  	+ Selector Indicator.
@@ -14,4 +16,4 @@
 
  + BONUS : 
  	+ Add visuals around the radio.
- 	+ Add two modes to load only old music or load musics from the remde 2024 version
+ 	+ Add two modes to load only old music or load musics from the remade 2024 version
