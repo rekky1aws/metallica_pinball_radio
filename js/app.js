@@ -115,7 +115,7 @@ function startApp ()
 
 function nextTrack ()
 {
-	if (trackId === tracks.length)
+	if (trackId === tracks.length - 1)
 	{
 		return null;
 	}
