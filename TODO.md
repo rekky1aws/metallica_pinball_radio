@@ -19,3 +19,4 @@
  		+ Multiple themes
  		+ Change with up & down arrows
  	+ Add two modes to load only old music or load musics from the remade 2024 version
+ 	+ Change page title and append music title
