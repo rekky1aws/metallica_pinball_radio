@@ -10,9 +10,7 @@
  	+ Fill Gauges with random values for every music
  + Apply position of the correct track on the selector.
  + Add buttons (and/or action) on mobile to change song.
- + Display music name
- 	+ Correct color (green)
- 	+ correct font (a bit pixelated)
+
 
  + BONUS : 
  	+ Add visuals around the radio.
