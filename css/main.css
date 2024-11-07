@@ -30,10 +30,6 @@ main {
      background-color: saddlebrown;
 }
 
-#video-container {
-     display: none;
-}
-
 /* DEBUG
 div {
      min-width: 50px;
