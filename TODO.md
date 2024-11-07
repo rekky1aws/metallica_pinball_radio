@@ -10,7 +10,9 @@
  	+ Fill Gauges with random values for every music
  + Apply position of the correct track on the selector.
  + Add buttons (and/or action) on mobile to change song.
-
+ + Add pause button
+ 	+ Display a pause sign in song-name when paused
+ 	+ Replace modal with pause
 
  + BONUS : 
  	+ Add visuals around the radio.
