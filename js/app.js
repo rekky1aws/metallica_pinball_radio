@@ -107,6 +107,7 @@ function startApp ()
 	loadTrackFromInd();
 	genTrackPos();
 	setSelArrPos();
+	displaySongName();
 
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
@@ -120,11 +121,8 @@ function nextTrack ()
 		return null;
 	}
 
-	shortRadioSweep();
-	unloadEmbededYtVideo();
 	trackId++;
-	loadTrackFromInd();
-	setSelArrPos();
+	changeTrack();
 
 	return true;
 }
@@ -136,13 +134,19 @@ function prevTrack ()
 		return null;
 	}
 
-	shortRadioSweep();
-	unloadEmbededYtVideo();
 	trackId--;
-	loadTrackFromInd();
-	setSelArrPos();
+	changeTrack();
 
 	return true;
+}
+
+function changeTrack ()
+{
+	shortRadioSweep();
+	unloadEmbededYtVideo();
+	loadTrackFromInd();
+	setSelArrPos();
+	displaySongName();
 }
 
 function genTrackPos ()
@@ -155,6 +159,11 @@ function genTrackPos ()
 	}
 
 	console.log(trackPos);
+}
+
+function displaySongName ()
+{
+	songNameElt.textContent = tracks[trackId].title;
 }
 
 function setSelArrPos ()
