@@ -49,7 +49,7 @@ const tracks = [
 	new MusicTrack("Ride the Lightning", "DVOImtJY7po"),
 	new MusicTrack("For Whom the Bell Tolls", "B_HSa1dEL9s"),
 	new MusicTrack("Fade to Black", "9HZ_tx8aWuA"),
-	new MusicTrack("Battery", "uzlOcupu5UE"),
+	new MusicTrack("Battery", "RvW4OQFA_UY"),
 	new MusicTrack("Master of Puppets", "u6LahTuw02c"),
 	new MusicTrack("Blackened", "8G4xF_VGhEw", 36),
 	new MusicTrack("One", "apK2jCrfnsk", 18),
