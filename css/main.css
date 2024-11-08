@@ -154,4 +154,13 @@ div {
 	border: none;
 	padding: min(2.5vh, 2.5vw);
 	background-color: royalblue;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+.small-text {
+     font-size: 2rem;
+     font-style: italic;
 }
