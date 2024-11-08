@@ -2,8 +2,8 @@
      font-family: "Pixelated";
      src:
           local("Pixelated"),
-          url("./media/font/pixelated.ttf") format("truetype"),
-          url("./media/font/pixelated.otf") format("opentype"),
+          url("../media/font/pixelated.ttf") format("truetype"),
+          url("../media/font/pixelated.otf") format("opentype"),
      ;
 }
 
