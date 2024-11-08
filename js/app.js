@@ -64,6 +64,7 @@ const tracks = [
 let modalClicked = false;
 let trackId = Math.floor(Math.random() * tracks.length);
 let trackPos = [];
+let isMusicPlaying = true;
 let stopSweep;
 
 // FUNCS
@@ -149,6 +150,17 @@ function changeTrack ()
 	displaySongName();
 }
 
+function pauseTrack ()
+{
+	if (isMusicPlaying) {
+		songNameElt.innerHTML = "&#x23F8;";
+
+	} else {
+		songNameElt.innerHTML = tracks[trackId].title;
+	}
+	isMusicPlaying = !isMusicPlaying;
+}
+
 function genTrackPos ()
 {
 	for (let i = 0; i < tracks.length; i++) {
@@ -198,13 +210,17 @@ document.addEventListener('keydown', (evt) => {
 		return null;
 	}
 
-	switch (evt.key) {
+	switch (evt.code) {
 		case "ArrowLeft":
 			prevTrack();
 			break;
 			
 		case "ArrowRight":
 			nextTrack();
+			break;
+
+		case "Space":
+			pauseTrack();
 			break;
 
 		default:
