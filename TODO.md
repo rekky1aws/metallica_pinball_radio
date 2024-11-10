@@ -1,9 +1,6 @@
 # TODO
  + Music :
  	+ Add new tracks from the 2024 remake
- + HTML :
- 	+ Knob indicator.
- 	+ Selector Indicator.
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
  	+ Rotate knobs on music change
