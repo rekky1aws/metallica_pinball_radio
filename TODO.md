@@ -11,6 +11,7 @@
  	+ Add real pause
  	+ Display a pause sign in song-name when paused
  	+ Replace modal with pause
+ + Use right knob as a volume knob
 
  + BONUS : 
  	+ Add visuals around the radio.
