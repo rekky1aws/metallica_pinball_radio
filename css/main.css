@@ -77,12 +77,24 @@ div {
 }
 
 .knob {
+     position: relative;
      aspect-ratio: 1 / 1;
      border-radius: 50%;
      margin: 0.5vh;
      background-color: silver;
      border: 0.25vh solid black;
      box-shadow: 0 0 0.25vh 0.25vh rgba(0,0,0,0.5), inset -0.25vh -0.25vh 0.25vh 0.25vh rgba(0,0,0,0.5), inset 0.25vh 0.25vh 0.25vh 0.25vh rgba(255,255,255,0.5);
+}
+
+.knob-indicator {
+     position: absolute;
+     content: "";
+     width: 1vw;
+     height: 3vh;
+     background-color: black;
+     top: 0;
+     left: calc(50% - (0.5 * 1vw));
+     border-radius: 0 0 50% 50%;
 }
 
 .center {
