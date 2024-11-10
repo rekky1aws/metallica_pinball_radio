@@ -42,6 +42,7 @@ const modalBtn = document.querySelector('#modal-btn');
 const sfx = document.querySelector('#sfx');
 const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
+const leftKnob = document.querySelector('.left-knob');
 
 const tracks = [
 	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
@@ -82,19 +83,19 @@ function loadEmbededYtVideo (parentNode = videoContainer, embedLink = "")
 	parentNode.appendChild(ytPlayer);
 }
 
-function unloadEmbededYtVideo (parentNode=videoContainer)
+function unloadEmbededYtVideo (parentNode = videoContainer)
 {
 	parentNode.innerHTML = "";
 }
 
-function loadAllTracks (parentNode=videoContainer)
+function loadAllTracks (parentNode = videoContainer)
 {
 	tracks.forEach((elt) => {
 		loadEmbededYtVideo(parentNode, elt.embedLink);
 	});
 }
 
-function loadTrackFromInd (i=trackId, parentNode=videoContainer)
+function loadTrackFromInd (i = trackId, parentNode = videoContainer)
 {
 	loadEmbededYtVideo(parentNode, tracks[i].embedLink);
 }
@@ -109,6 +110,7 @@ function startApp ()
 	genTrackPos();
 	setSelArrPos();
 	displaySongName();
+	rotateLeftKnob();
 
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
@@ -148,9 +150,10 @@ function changeTrack ()
 	loadTrackFromInd();
 	setSelArrPos();
 	displaySongName();
+	rotateLeftKnob();
 }
 
-function pauseTrack ()
+function pauseTrack () // NOT FINISHED
 {
 	if (isMusicPlaying) {
 		songNameElt.innerHTML = "&#x23F8;";
@@ -181,6 +184,11 @@ function displaySongName ()
 function setSelArrPos ()
 {
 	selArrow.style.left = `calc(${trackPos[trackId]}% - 0.25vh)`;
+}
+
+function rotateLeftKnob ()
+{
+	leftKnob.style.transform = `rotate(${(trackPos[trackId] / 100 * 340) - 160}deg)`;
 }
 
 function playRadioSweep ()
