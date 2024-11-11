@@ -188,7 +188,8 @@ function setSelArrPos ()
 
 function rotateLeftKnob ()
 {
-	leftKnob.style.transform = `rotate(${(trackPos[trackId] / 100 * 340) - 160}deg)`;
+	leftKnob.style.boxShadow = `0 0 0.25vh 0.25vh rgba(0,0,0,0.5), inset -0.25vh -0.25vh 0.25vh 0.25vh rgba(0,0,0,0.5), inset 0.25vh 0.25vh 0.25vh 0.25vh rgba(255,255,255,0.5);`;
+	leftKnob.style.transform = `rotate(${(trackPos[trackId] / 100 * 300) - 160}deg)`;
 }
 
 function playRadioSweep ()
