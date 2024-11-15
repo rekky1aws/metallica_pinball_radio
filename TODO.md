@@ -1,7 +1,10 @@
 # TODO
  + Header
-  + Title
- 
+ 	+ Title
+ + Footer
+ 	+ Credits
+ 	+ Report Bug
+
  + Music :
  	+ Add new tracks from the 2024 remake
  + Animation :
