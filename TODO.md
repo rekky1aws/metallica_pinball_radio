@@ -1,23 +1,30 @@
 # TODO
  + Header
  	+ Title
+
  + Footer
  	+ Credits
  	+ Report Bug
 
  + Music :
  	+ Add new tracks from the 2024 remake
+
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
  	+ Rotate knobs on music change
- 	+ Fill Gauges with random values for every music
- + Apply position of the correct track on the selector.
+ 	+ Fill left gauge with random values for every music.
+ 	+ Fill right gauge with the volume value.
+
  + Add buttons (and/or action) on mobile to change song.
  + Add pause button
  	+ Add real pause
  	+ Display a pause sign in song-name when paused
  	+ Replace modal with pause
  + Use right knob as a volume knob
+
+ + Refactor JS in multiple files
+ + Use YouTube APIiFrame instead of being a monkey
+
 
  + BONUS : 
  	+ Add visuals around the radio.
