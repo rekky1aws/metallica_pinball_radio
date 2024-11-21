@@ -11,6 +11,7 @@ body {
      padding: 0;
      margin: 0;
      background-color: #1D1D1D;
+     font-family: Helvetica, sans-serif;
 }
 
 main {
@@ -21,6 +22,33 @@ main {
      margin: 0;
      width: 100vw;
      height: 100vh;
+}
+
+footer {
+     position: fixed;
+     width: 100vw;
+     bottom: 0;
+     background-color: #FFFFFF22;
+     display: flex;
+     justify-content: space-between;
+     color: #FFFFFF;
+}
+
+footer div {
+     margin: 5px;
+}
+
+footer a {
+     color: royalblue;
+     text-decoration: none;
+     font-weight: bold;
+     padding: 5px;
+     border-radius: 5px;
+}
+
+footer a:hover {
+     background-color: royalblue;
+     color: #FFFFFF;
 }
 
 #main-sect {
