@@ -3,8 +3,7 @@
  	+ Title
 
  + Footer
- 	+ Credits
- 	+ Report Bug (link to github issues)
+ 	+ Style
 
  + Music :
  	+ Add new tracks from the 2024 remake
