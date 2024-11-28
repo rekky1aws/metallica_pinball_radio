@@ -24,6 +24,16 @@ main {
      height: 100vh;
 }
 
+header {
+     color: #FFFFFF;
+     position: fixed;
+     width: 100vw;
+}
+
+header h1 {
+     margin: 1vw;
+}
+
 footer {
      position: fixed;
      width: 100vw;
