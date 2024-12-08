@@ -1,6 +1,14 @@
 # TODO
  + Music :
  	+ Add new tracks from the 2024 remake
+ 	   + 72 Seasons
+ 	   + Hardwired
+ 	   + Frantic
+ 	   + Hit The Lights
+ 	   + If Darknes Had a Son
+ 	   + King Nothing
+ 	   + Moth Into Flame
+ 	   + Spit Out the Bone
 
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
