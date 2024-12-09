@@ -34,15 +34,20 @@ class MusicTrack {
 }
 
 // CONSTS
-const header = document.querySelector('header');
+	// HTML Elements
+		// Containers
 const footer = document.querySelector('footer');
+const header = document.querySelector('header');
 const mainSect = document.querySelector('#main-sect');
-const videoContainer = document.querySelector('#video-container');
-const modalBtn = document.querySelector('#modal-btn');
 const sfx = document.querySelector('#sfx');
+const videoContainer = document.querySelector('#video-container');
+		// Modal
+const modalBtn = document.querySelector('#modal-btn');
+const remakeTracksChbx = document.querySelector('#remake-tracks');
+	// Animations
+const leftKnob = document.querySelector('.left-knob');
 const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
-const leftKnob = document.querySelector('.left-knob');
 
 const tracksOriginal = [
 	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
