@@ -92,7 +92,7 @@ const tracksRemake = [
 
 // VARS
 let modalClicked = false;
-let tracks = tracksRemake;
+let tracks = tracksOriginal;
 let trackId = Math.floor(Math.random() * tracks.length);
 let trackPos = [];
 let isMusicPlaying = true;
@@ -134,6 +134,12 @@ function startApp ()
 {
 	if (modalClicked) {
 		return null;
+	}
+
+	if (remakeTracksChbx.checked) {
+		tracks = tracksRemake;
+	} else {
+		tracks = tracksOriginal;
 	}
 
 	loadTrackFromInd();
