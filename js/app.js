@@ -44,25 +44,50 @@ const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
 const leftKnob = document.querySelector('.left-knob');
 
-const tracks = [
+const tracksOriginal = [
 	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
-	new MusicTrack("Seek and Destroy", "FLTchCiC0T0"),
-	new MusicTrack("Ride the Lightning", "DVOImtJY7po"),
-	new MusicTrack("For Whom the Bell Tolls", "B_HSa1dEL9s"),
+	new MusicTrack("Seek & Destroy", "FLTchCiC0T0"),
+	new MusicTrack("Ride The Lightning", "DVOImtJY7po"),
+	new MusicTrack("For Whom The Bell Tolls", "B_HSa1dEL9s"),
 	new MusicTrack("Fade to Black", "9HZ_tx8aWuA"),
 	new MusicTrack("Battery", "RvW4OQFA_UY"),
-	new MusicTrack("Master of Puppets", "u6LahTuw02c"),
+	new MusicTrack("Master Of Puppets", "u6LahTuw02c"),
 	new MusicTrack("Blackened", "8G4xF_VGhEw", 36),
 	new MusicTrack("One", "apK2jCrfnsk", 18),
 	new MusicTrack("Enter Sandman", "XZuM4zFg-60"),
-	new MusicTrack("Sad but True", "TpohVYomw2o"),
+	new MusicTrack("Sad But True", "TpohVYomw2o"),
 	new MusicTrack("The Unforgiven", "domjqjQ_WRI"),
 	new MusicTrack("Fuel", "Ji_QolNU4I8")
+];
+
+const tracksRemake = [
+	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
+	new MusicTrack("Hit The Lights", "1bW2DMOeDEM"),
+	new MusicTrack("Seek & Destroy", "FLTchCiC0T0"),
+	new MusicTrack("Ride The Lightning", "DVOImtJY7po"),
+	new MusicTrack("For Whom The Bell Tolls", "B_HSa1dEL9s"),
+	new MusicTrack("Fade to Black", "9HZ_tx8aWuA"),
+	new MusicTrack("Battery", "RvW4OQFA_UY"),
+	new MusicTrack("Master Of Puppets", "u6LahTuw02c"),
+	new MusicTrack("Blackened", "8G4xF_VGhEw", 36),
+	new MusicTrack("One", "apK2jCrfnsk", 18),
+	new MusicTrack("Enter Sandman", "XZuM4zFg-60"),
+	new MusicTrack("Sad But True", "TpohVYomw2o"),
+	new MusicTrack("The Unforgiven", "domjqjQ_WRI"),
+	new MusicTrack("King Nothing", "Xz9DX_VMXdI"),
+	new MusicTrack("Fuel", "Ji_QolNU4I8"),
+	new MusicTrack("Frantic", "Sq3eLdixvCc"),
+	new MusicTrack("Hardwired", "THO9ycDW8tA"),
+	new MusicTrack("Moth Into Flame", "BtRyz1qGI8c"),
+	new MusicTrack("Spit Out The Bone", "JQ6s7pNiC6A"),
+	new MusicTrack("72 Seasons", "0rVIEj7zgOo"),
+	new MusicTrack("If Darknes Had a Son", "GkUC44CWwjw")
 ];
 
 
 // VARS
 let modalClicked = false;
+let tracks = tracksRemake;
 let trackId = Math.floor(Math.random() * tracks.length);
 let trackPos = [];
 let isMusicPlaying = true;
