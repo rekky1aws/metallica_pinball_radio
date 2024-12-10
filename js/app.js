@@ -247,7 +247,7 @@ function shortRadioSweep ()
 // EVENTLISTENERS
 modalBtn.addEventListener('click', startApp);
 
-document.addEventListener('keydown', (evt) => {
+document.addEventListener('keydown', (evt) => { // key Press
 	if (!modalClicked) {
 		if (evt.key === "Enter") {
 			startApp();
@@ -256,6 +256,14 @@ document.addEventListener('keydown', (evt) => {
 	}
 
 	switch (evt.code) {
+		case "ArrowUp":
+			volumeUp();
+			break;
+
+		case "ArrowDown":
+			volumeDown();
+			break;
+
 		case "ArrowLeft":
 			prevTrack();
 			break;
