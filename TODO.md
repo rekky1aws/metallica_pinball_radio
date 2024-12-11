@@ -1,4 +1,7 @@
 # TODO
+ + Console :
+ 	+ Find a way to hide errors caused by YouTube (maybe APIiFrame will solve this ?)
+
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
  	+ Fill left gauge with random values for every music.
