@@ -130,6 +130,16 @@ function loadTrackFromInd (i = trackId, parentNode = videoContainer)
 	loadEmbededYtVideo(parentNode, tracks[i].embedLink);
 }
 
+function volumeUp ()
+{
+
+}
+
+function volumeDown ()
+{
+	
+}
+
 function startApp () 
 {
 	if (modalClicked) {
