@@ -31,6 +31,20 @@ class MusicTrack {
 
 		return link;
 	}
+
+	generateIFrame ()
+	{
+		var player;
+		player = new YT.Player('player', {
+			height: '360',
+			width: '640',
+			videoId: this.videoCode,
+			events: {
+				'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			}
+		});
+	}
 }
 
 // CONSTS
@@ -63,7 +77,7 @@ const tracksOriginal = [
 	new MusicTrack("Sad But True", "TpohVYomw2o"),
 	new MusicTrack("The Unforgiven", "domjqjQ_WRI"),
 	new MusicTrack("Fuel", "Ji_QolNU4I8")
-];
+	];
 
 const tracksRemake = [
 	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
@@ -87,7 +101,7 @@ const tracksRemake = [
 	new MusicTrack("Spit Out The Bone", "JQ6s7pNiC6A"),
 	new MusicTrack("72 Seasons", "0rVIEj7zgOo"),
 	new MusicTrack("If Darknes Had a Son", "GkUC44CWwjw")
-];
+	];
 
 
 // VARS
@@ -137,7 +151,7 @@ function volumeUp ()
 
 function volumeDown ()
 {
-	
+
 }
 
 function startApp () 
@@ -254,6 +268,17 @@ function shortRadioSweep ()
 	stopSweep = setTimeout(stopRadioSweep, 1000);
 }
 
+function onPlayerReady(event) {
+	event.target.playVideo();
+}
+
+function onPlayerStateChange(event) {
+	if (event.data == YT.PlayerState.PLAYING && !done) {
+		setTimeout(stopVideo, 6000);
+		done = true;
+	}
+}
+
 // EVENTLISTENERS
 modalBtn.addEventListener('click', startApp);
 
@@ -266,28 +291,28 @@ document.addEventListener('keydown', (evt) => { // key Press
 	}
 
 	switch (evt.code) {
-		case "ArrowUp":
-			volumeUp();
-			break;
+	case "ArrowUp":
+		volumeUp();
+		break;
 
-		case "ArrowDown":
-			volumeDown();
-			break;
+	case "ArrowDown":
+		volumeDown();
+		break;
 
-		case "ArrowLeft":
-			prevTrack();
-			break;
-			
-		case "ArrowRight":
-			nextTrack();
-			break;
+	case "ArrowLeft":
+		prevTrack();
+		break;
+		
+	case "ArrowRight":
+		nextTrack();
+		break;
 
-		case "Space":
-			pauseTrack();
-			break;
+	case "Space":
+		pauseTrack();
+		break;
 
-		default:
-			break;
+	default:
+		break;
 	}
 });
 
