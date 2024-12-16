@@ -12,7 +12,8 @@
  + Use right knob as a volume knob
 
  + Refactor JS in multiple files
-
+ 
+ + Add a page with all informations and credits
 
  + BONUS : 
  	+ Add visuals around the radio.
