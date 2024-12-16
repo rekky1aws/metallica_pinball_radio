@@ -127,14 +127,22 @@ function loadTrackFromInd (i = trackId)
 	tracks[i].generateIFrame();
 }
 
+function volumeChange (value = 0)
+{
+	const currentVolume = tracks[trackId]._player.getVolume();
+	const newVolume = Math.min(Math.max(0, currentVolume + value));
+
+	tracks[trackId]._player.setVolume(newVolume);
+}
+
 function volumeUp ()
 {
-
+	volumeChange(5);
 }
 
 function volumeDown ()
 {
-
+	volumeChange(-5);
 }
 
 function startApp () 
