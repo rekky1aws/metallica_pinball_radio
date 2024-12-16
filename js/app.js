@@ -43,6 +43,8 @@ class MusicTrack {
 				'onReady': onPlayerReady
 			}
 		});
+
+		this._player = player;
 	}
 }
 
@@ -197,9 +199,11 @@ function changeTrack ()
 function pauseTrack () // NOT FINISHED
 {
 	if (isMusicPlaying) {
+		tracks[trackId]._player.pauseVideo();
 		songNameElt.innerHTML = "&#x23F8;";
 
 	} else {
+		tracks[trackId]._player.playVideo();
 		songNameElt.innerHTML = tracks[trackId].title;
 	}
 	isMusicPlaying = !isMusicPlaying;
