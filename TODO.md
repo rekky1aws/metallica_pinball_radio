@@ -6,10 +6,10 @@
  	+ Loader for the radio with random spin of the knobs.
  	+ Fill left gauge with random values for every music.
  	+ Fill right gauge with the volume value.
+ 	+ Right Knob rotating according to the volume.
 
  + Add buttons (and/or action) on mobile to change song.
  + Add pause button for mobile
- + Use right knob as a volume knob
 
  + Refactor JS in multiple files
  
