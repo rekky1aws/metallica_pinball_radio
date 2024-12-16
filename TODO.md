@@ -1,6 +1,6 @@
 # TODO
  + Console :
- 	+ Find a way to hide errors caused by YouTube (maybe APIiFrame will solve this ?)
+ 	+ Find a way to hide errors caused by YouTube
 
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
@@ -15,7 +15,6 @@
  + Use right knob as a volume knob
 
  + Refactor JS in multiple files
- + Use YouTube APIiFrame instead of being a monkey
 
 
  + BONUS : 
