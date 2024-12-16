@@ -8,10 +8,7 @@
  	+ Fill right gauge with the volume value.
 
  + Add buttons (and/or action) on mobile to change song.
- + Add pause button
- 	+ Add real pause
- 	+ Display a pause sign in song-name when paused
- 	+ Replace modal with pause
+ + Add pause button for mobile
  + Use right knob as a volume knob
 
  + Refactor JS in multiple files
