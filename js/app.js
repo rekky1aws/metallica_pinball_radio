@@ -34,14 +34,13 @@ class MusicTrack {
 
 	generateIFrame ()
 	{
-		var player;
+		let player;
 		player = new YT.Player('player', {
 			height: '360',
 			width: '640',
 			videoId: this.videoCode,
 			events: {
-				'onReady': onPlayerReady,
-				'onStateChange': onPlayerStateChange
+				'onReady': onPlayerReady
 			}
 		});
 	}
@@ -113,35 +112,17 @@ let isMusicPlaying = true;
 let stopSweep;
 
 // FUNCS
-function loadEmbededYtVideo (parentNode = videoContainer, embedLink = "")
+function unloadEmbededYtVideo ()
 {
-	const ytPlayer = document.createElement('iframe');
-
-	ytPlayer.setAttribute("src", embedLink);
-	ytPlayer.setAttribute("frameborder", "0");
-	ytPlayer.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
-	ytPlayer.setAttribute("allowfullscreen", "");
-	ytPlayer.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
-	ytPlayer.classList.add('yt-player');
-
-	parentNode.appendChild(ytPlayer);
+	const player = document.createElement('div');
+	player.id = "player";
+	videoContainer.innerHTML = "";
+	videoContainer.append(player);
 }
 
-function unloadEmbededYtVideo (parentNode = videoContainer)
+function loadTrackFromInd (i = trackId)
 {
-	parentNode.innerHTML = "";
-}
-
-function loadAllTracks (parentNode = videoContainer)
-{
-	tracks.forEach((elt) => {
-		loadEmbededYtVideo(parentNode, elt.embedLink);
-	});
-}
-
-function loadTrackFromInd (i = trackId, parentNode = videoContainer)
-{
-	loadEmbededYtVideo(parentNode, tracks[i].embedLink);
+	tracks[i].generateIFrame();
 }
 
 function volumeUp ()
@@ -270,13 +251,6 @@ function shortRadioSweep ()
 
 function onPlayerReady(event) {
 	event.target.playVideo();
-}
-
-function onPlayerStateChange(event) {
-	if (event.data == YT.PlayerState.PLAYING && !done) {
-		setTimeout(stopVideo, 6000);
-		done = true;
-	}
 }
 
 // EVENTLISTENERS
