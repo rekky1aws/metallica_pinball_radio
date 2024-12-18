@@ -22,6 +22,11 @@ class MusicTrack {
 		this._startTime = startTime;
 	}
 
+	get gaugePercent ()
+	{
+		return this._gaugePercent;
+	}
+
 	get title ()
 	{
 		return this._title;
@@ -45,6 +50,11 @@ class MusicTrack {
 		}
 
 		return link;
+	}
+
+	set gaugePercent (gaugePercent = 0)
+	{
+		this._gaugePercent = gaugePercent;
 	}
 
 	generateIFrame ()
