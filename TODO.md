@@ -4,6 +4,7 @@
 
  + Animation :
  	+ Loader for the radio with random spin of the knobs.
+ 		+ Use MusicTrack.gaugePercent.
  	+ Fill left gauge with random values for every music.
  	+ Fill right gauge with the volume value.
  	+ Right Knob rotating according to the volume.
