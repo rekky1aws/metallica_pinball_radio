@@ -15,6 +15,8 @@ String.prototype.hashCode = function ()
 
 // CLASS
 class MusicTrack {
+	_gaugePercent = null;
+	
 	constructor (title="", videoCode="", startTime=0) 
 	{
 		this._title = title;
@@ -52,7 +54,7 @@ class MusicTrack {
 		return link;
 	}
 
-	set gaugePercent (gaugePercent = 0)
+	set gaugePercent (gaugePercent)
 	{
 		this._gaugePercent = gaugePercent;
 	}
@@ -182,6 +184,7 @@ function startApp ()
 		tracks = tracksOriginal;
 	}
 
+	setAllGaugePercent();
 	loadTrackFromInd();
 	genTrackPos();
 	setSelArrPos();
@@ -288,6 +291,14 @@ function shortRadioSweep ()
 
 function onPlayerReady(event) {
 	event.target.playVideo();
+}
+
+function setAllGaugePercent() {
+	const maxValue = 1.1 * Math.max(...tracks.map(e => Math.abs(e.videoCode.hashCode())));
+
+	tracks.forEach( (track) => {
+		track.gaugePercent = Math.floor(Math.abs(track.videoCode.hashCode()) / maxValue * 100);
+	});
 }
 
 // EVENTLISTENERS
