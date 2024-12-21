@@ -32,6 +32,10 @@ header {
 
 header h1 {
      margin: 1vw;
+     display: flex;
+     gap: 0.5rem;
+     justify-content: flex-start;
+     align-items: center;
 }
 
 footer {
@@ -107,6 +111,24 @@ div {
 
 .hidden {
 	display: none !important;
+}
+
+.home-link {
+     background-color: royalblue;
+     text-align: center;
+     vertical-align: middle;
+     color: #FFFFFF;
+     text-decoration: none;
+     font-family: Helvetica;
+     font-size: 0.5em;
+     padding: 0.25em;
+     border-radius: 50%;
+     width: 1em;
+     height: 1em;
+}
+
+.home-link:hover {
+     transform: scale(1.1);
 }
 
 .knob {
