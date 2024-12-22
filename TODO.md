@@ -14,12 +14,10 @@
 
  + Refactor JS in multiple files
  
- + Add a page with all informations and credits
+ + favicon
 
  + BONUS : 
  	+ Add visuals around the radio.
  		+ Multiple themes
- 		+ Change with up & down arrows
- 	+ Add two modes to load only old music or load musics from the remade 2024 version
  	+ Change page title and append music title
  	+ Play an error sound when trying to reach a music that doesn't exist
