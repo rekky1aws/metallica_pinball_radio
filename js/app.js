@@ -1,3 +1,4 @@
+// Get Hash from string.
 String.prototype.hashCode = function ()
 {
 	let hash = 0;
@@ -303,6 +304,7 @@ function setAllGaugePercent() {
 
 // EVENTLISTENERS
 modalBtn.addEventListener('click', startApp);
+songNameElt.parentNode.addEventListener('touchend', pauseTrack);
 
 document.addEventListener('keydown', (evt) => { // key Press
 	if (!modalClicked) {
