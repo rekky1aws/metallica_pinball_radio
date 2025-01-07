@@ -67,6 +67,11 @@ class MusicTrack {
 			height: '360',
 			width: '640',
 			videoId: this.videoCode,
+			playerVars : {
+				autoplay: 1,
+				loop: 1,
+				start: this.startTime
+			},
 			events: {
 				'onReady': onPlayerReady
 			}
@@ -159,7 +164,7 @@ function loadTrackFromInd (i = trackId)
 function volumeChange (value = 0)
 {
 	const currentVolume = tracks[trackId]._player.getVolume();
-	const newVolume = Math.min(Math.max(0, currentVolume + value));
+	const newVolume = Math.min(Math.max(0, currentVolume + value), 100);
 
 	tracks[trackId]._player.setVolume(newVolume);
 }
