@@ -7,6 +7,8 @@
  	+ Right Knob rotating according to the volume.
 
  + Add buttons (and/or action) on mobile to change song.
+ 	+ Use knob and gauges
+ 	+ Check if user is on mobile to display the commands on modal.
 
  + Refactor JS in multiple files
  
