@@ -12,7 +12,7 @@
 
  + Refactor JS in multiple files
  
- + favicon
+ + Add logo to page
 
  + BONUS : 
  	+ Loader for the radio with random spin of the knobs.
