@@ -321,7 +321,7 @@ function setAllGaugePercent() {
 
 // EVENTLISTENERS
 modalBtn.addEventListener('click', startApp);
-songNameElt.parentNode.addEventListener('touchend', pauseTrack);
+songNameElt.parentNode.parentNode.addEventListener('touchend', pauseTrack);
 leftContainer.addEventListener('touchend', prevTrack);
 rightContainer.addEventListener('touchend', nextTrack);
 
