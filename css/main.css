@@ -151,7 +151,7 @@ div {
      position: absolute;
      content: "";
      width: 1vw;
-     height: 3vh;
+     height: calc(min(3vh, 3vw));
      background-color: black;
      top: 0;
      left: calc(50% - (0.5 * 1vw));
@@ -208,6 +208,7 @@ div {
      font-family: "Pixelated", sans-serif;
      font-size: 3vw;
      letter-spacing: 0.2vw;
+     text-align: center;
 }
 
 .song-name-container {
@@ -237,5 +238,33 @@ div {
      flex-direction: column;
      justify-content: center;
      align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+     #main-sect {
+          width: 100vw;
+          aspect-ratio: 4 / 1;
+     }
+
+     .gauge {
+          display: none;
+     }
+
+     .knob-container:first-child {
+          grid-template-columns: 2fr;
+     }
+
+     .knob-container:last-child {
+          grid-template-columns: 2fr;
+     }
+
+     .song-name {
+          font-size: 3vh;
+     }
+
+     .knob-indicator {
+          height: 33%;
+          width: 5%;
+     }
 }
 
