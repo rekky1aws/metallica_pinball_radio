@@ -89,6 +89,8 @@ const header = document.querySelector('header');
 const mainSect = document.querySelector('#main-sect');
 const sfx = document.querySelector('#sfx');
 const videoContainer = document.querySelector('#video-container');
+const leftContainer = document.querySelector('#left-container');
+const rightContainer = document.querySelector('#rightContainer');
 		// Modal
 const modalBtn = document.querySelector('#modal-btn');
 const remakeTracksChbx = document.querySelector('#remake-tracks');
@@ -320,6 +322,8 @@ function setAllGaugePercent() {
 // EVENTLISTENERS
 modalBtn.addEventListener('click', startApp);
 songNameElt.parentNode.addEventListener('touchend', pauseTrack);
+leftContainer.addEventListener('touchend', prevTrack);
+rightContainer.addEventListener('touchend', nextTrack);
 
 document.addEventListener('keydown', (evt) => { // key Press
 	if (!modalClicked) {
