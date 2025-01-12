@@ -227,6 +227,14 @@ div {
      background-color: saddlebrown;
 }
 
+.modal {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 1vh;
+}
+
 #modal-btn {
 	font-family: Helvetica, sans-serif;
 	font-size: min(7.5vh, 7.5vw);
@@ -238,6 +246,21 @@ div {
      flex-direction: column;
      justify-content: center;
      align-items: center;
+}
+
+#mobile-controls {
+     display: none;
+     color: #FFFFFF;
+}
+
+#mobile-controls p {
+     text-decoration: underline;
+     font-weight: bold;
+     margin: 0.25vh;
+}
+
+#mobile-controls ul {
+     margin: 0.25vh;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -265,6 +288,10 @@ div {
      .knob-indicator {
           height: 33%;
           width: 5%;
+     }
+
+     #mobile-controls {
+          display: block;
      }
 }
 
