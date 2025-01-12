@@ -90,7 +90,7 @@ const mainSect = document.querySelector('#main-sect');
 const sfx = document.querySelector('#sfx');
 const videoContainer = document.querySelector('#video-container');
 const leftContainer = document.querySelector('#left-container');
-const rightContainer = document.querySelector('#rightContainer');
+const rightContainer = document.querySelector('#right-container');
 		// Modal
 const modalBtn = document.querySelector('#modal-btn');
 const remakeTracksChbx = document.querySelector('#remake-tracks');
