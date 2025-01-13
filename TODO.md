@@ -1,6 +1,4 @@
 # TODO
- + Console :
- 	+ Find a way to hide errors caused by YouTube
 
  + Animation :
  	+ Fill right gauge with the volume value.
@@ -10,6 +8,10 @@
  
  + Add logo to page
 
+ + Console :
+ 	+ Find a way to hide errors caused by YouTube
+ 		+ Redifine console.log to empty function at the beggining of JS file ( /!\ Do this at the very end of the project /!\ )
+ 		
  + BONUS : 
  	+ Loader for the radio with random spin of the knobs.
  	+ Add visuals around the radio.
