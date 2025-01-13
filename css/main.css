@@ -28,12 +28,14 @@ header {
      color: #FFFFFF;
      position: fixed;
      width: 100vw;
+     display: flex;
+     justify-content: flex-start;
+     align-items: center;
 }
 
 header h1 {
-     margin: 1vw;
+     margin: 1vw 0;
      display: flex;
-     gap: 0.5rem;
      justify-content: flex-start;
      align-items: center;
 }
@@ -225,6 +227,11 @@ div {
      width: 80vw;
      aspect-ratio: 8 / 1;
      background-color: saddlebrown;
+}
+
+#logo {
+     height: 5em;
+     padding: 1em;
 }
 
 .modal {
