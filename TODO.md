@@ -5,8 +5,6 @@
  	+ Right Knob rotating according to the volume.
 
  + Refactor JS in multiple files
- 
- + Add logo to page
 
  + Console :
  	+ Find a way to hide errors caused by YouTube
