@@ -97,6 +97,7 @@ const remakeTracksChbx = document.querySelector('#remake-tracks');
 	// Animations
 const leftKnob = document.querySelector('.left-knob');
 const leftGaugeContent = document.querySelector('.left-gauge-content');
+const rightKnob = document.querySelector('.right-knob');
 const rightGaugeContent = document.querySelector('.right-gauge-content');
 const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
@@ -169,6 +170,9 @@ function loadTrackFromInd (i = trackId)
 function setRGtoVolume (value = 100)
 {
 	rightGaugeContent.style.height = `${value}%`;
+
+	rightKnob.style.boxShadow = `0 0 0.25vh 0.25vh rgba(0,0,0,0.5), inset -0.25vh -0.25vh 0.25vh 0.25vh rgba(0,0,0,0.5), inset 0.25vh 0.25vh 0.25vh 0.25vh rgba(255,255,255,0.5);`;
+	rightKnob.style.transform = `rotate(${(value / 100 * 300) - 160}deg)`;
 }
 
 function volumeChange (value = 0)
