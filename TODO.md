@@ -1,9 +1,4 @@
 # TODO
-
- + Animation :
- 	+ Fill right gauge with the volume value.
- 	+ Right Knob rotating according to the volume.
-
  + Refactor JS in multiple files
 
  + Console :
