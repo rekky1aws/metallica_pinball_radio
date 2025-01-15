@@ -97,6 +97,7 @@ const remakeTracksChbx = document.querySelector('#remake-tracks');
 	// Animations
 const leftKnob = document.querySelector('.left-knob');
 const leftGaugeContent = document.querySelector('.left-gauge-content');
+const rightGaugeContent = document.querySelector('.right-gauge-content');
 const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
 
@@ -165,10 +166,16 @@ function loadTrackFromInd (i = trackId)
 	tracks[i].generateIFrame();
 }
 
+function setRGtoVolume (value = 100)
+{
+	rightGaugeContent.style.height = `${value}%`;
+}
+
 function volumeChange (value = 0)
 {
 	const currentVolume = tracks[trackId]._player.getVolume();
 	const newVolume = Math.min(Math.max(0, currentVolume + value), 100);
+	setRGtoVolume(newVolume);
 
 	tracks[trackId]._player.setVolume(newVolume);
 }
@@ -202,6 +209,7 @@ function startApp ()
 	displaySongName();
 	rotateLeftKnob();
 	fillLeftGauge();
+	setRGtoVolume();
 
 	modalBtn.parentNode.classList.toggle('hidden');
 	mainSect.classList.toggle('hidden');
@@ -243,6 +251,7 @@ function changeTrack ()
 	displaySongName();
 	rotateLeftKnob();
 	fillLeftGauge();
+	setRGtoVolume();
 }
 
 function pauseTrack () // NOT FINISHED
