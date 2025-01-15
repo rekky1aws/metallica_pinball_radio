@@ -45,16 +45,6 @@ class MusicTrack {
 		return this._startTime;
 	}
 
-	get embedLink ()
-	{
-		let link = `https://www.youtube.com/embed/${this.videoCode}?si=2GYxFb57x9jPFMcA&autoplay=1&enablejsapi=1&rel=0`;
-		if (this.startTime > 0) {
-			link = link + `&start=${this.startTime}`;
-		}
-
-		return link;
-	}
-
 	set gaugePercent (gaugePercent)
 	{
 		this._gaugePercent = gaugePercent;
@@ -94,14 +84,14 @@ const rightContainer = document.querySelector('#right-container');
 		// Modal
 const modalBtn = document.querySelector('#modal-btn');
 const remakeTracksChbx = document.querySelector('#remake-tracks');
-	// Animations
+		// Animations
 const leftKnob = document.querySelector('.left-knob');
 const leftGaugeContent = document.querySelector('.left-gauge-content');
 const rightKnob = document.querySelector('.right-knob');
 const rightGaugeContent = document.querySelector('.right-gauge-content');
 const selArrow = document.querySelector('.selector-arrow');
 const songNameElt = document.querySelector('.song-name');
-
+	// Tracks
 const tracksOriginal = [
 	// MusicTrack(string:title, string:youtbe_hash, int:start_time_in_sec)
 	new MusicTrack("Seek & Destroy", "FLTchCiC0T0"),
@@ -179,9 +169,10 @@ function volumeChange (value = 0)
 {
 	const currentVolume = tracks[trackId]._player.getVolume();
 	const newVolume = Math.min(Math.max(0, currentVolume + value), 100);
-	setRGtoVolume(newVolume);
-
+	
 	tracks[trackId]._player.setVolume(newVolume);
+
+	setRGtoVolume(newVolume);
 }
 
 function volumeUp ()
